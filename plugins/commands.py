@@ -44,7 +44,7 @@ def formate_file_name(file_name):
     chars = ["[", "]", "(", ")"]
     for c in chars:
         file_name.replace(c, "")
-    file_name = '@VJ_Botz ' + ' '.join(filter(lambda x: not x.startswith('http') and not x.startswith('@') and not x.startswith('www.'), file_name.split()))
+    file_name = '💦 ' + ' '.join(filter(lambda x: not x.startswith('http') and not x.startswith('@') and not x.startswith('www.'), file_name.split()))
     return file_name
 
 # Don't Remove Credit Tg - @VJ_Botz
@@ -60,13 +60,13 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@Tech_VJ')
+            InlineKeyboardButton('𓆩ཫ  ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ  ཀ𓆪', url='https://t.me/DevThanos')
             ],[
-            InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/vj_bot_disscussion'),
-            InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/vj_botz')
+            InlineKeyboardButton('𓆩 ᴅᴍᴄᴀ', callback_data='help'),
+            InlineKeyboardButton('ᴀʙᴏᴜᴛ 𓆪', callback_data='about')
             ],[
-            InlineKeyboardButton('💁‍♀️ ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
+            InlineKeyboardButton('𓆩ཫ ʙᴀᴄᴋᴜᴘ', url='https://t.me/+HV95djLnCocxMWYx'),
+            InlineKeyboardButton('ᴄᴏɴᴛᴀᴄᴛ ཀ𓆪', url='https://t.me/Wannabeyoursbackup')
         ]]
         if CLONE_MODE == True:
             buttons.append([InlineKeyboardButton('🤖 ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', callback_data='clone')])
@@ -180,18 +180,18 @@ async def start(client, message):
                 else:
                     reply_markup = None
                 try:
-                    msg = await info.copy(chat_id=message.from_user.id, caption=f_caption, protect_content=False, reply_markup=reply_markup)
+                    msg = await info.copy(chat_id=message.from_user.id, caption=f_caption, protect_content=True, reply_markup=reply_markup)
                 except FloodWait as e:
                     await asyncio.sleep(e.value)
-                    msg = await info.copy(chat_id=message.from_user.id, caption=f_caption, protect_content=False, reply_markup=reply_markup)
+                    msg = await info.copy(chat_id=message.from_user.id, caption=f_caption, protect_content=True, reply_markup=reply_markup)
                 except:
                     continue
             else:
                 try:
-                    msg = await info.copy(chat_id=message.from_user.id, protect_content=False)
+                    msg = await info.copy(chat_id=message.from_user.id, protect_content=True)
                 except FloodWait as e:
                     await asyncio.sleep(e.value)
-                    msg = await info.copy(chat_id=message.from_user.id, protect_content=False)
+                    msg = await info.copy(chat_id=message.from_user.id, protect_content=True)
                 except:
                     continue
             filesarr.append(msg)
@@ -252,9 +252,9 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup(button)
             else:
                 reply_markup = None
-            del_msg = await msg.copy(chat_id=message.from_user.id, caption=f_caption, reply_markup=reply_markup, protect_content=False)
+            del_msg = await msg.copy(chat_id=message.from_user.id, caption=f_caption, reply_markup=reply_markup, protect_content=True)
         else:
-            del_msg = await msg.copy(chat_id=message.from_user.id, protect_content=False)
+            del_msg = await msg.copy(chat_id=message.from_user.id, protect_content=True)
         if AUTO_DELETE_MODE == True:
             k = await client.send_message(chat_id = message.from_user.id, text=f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>{AUTO_DELETE} minutes</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</b>")
             await asyncio.sleep(AUTO_DELETE_TIME)
@@ -319,8 +319,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.delete()
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('Hᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('🔒 Cʟᴏsᴇ', callback_data='close_data')
+            InlineKeyboardButton('𓆩ཫ ᴄᴏɴᴛᴀᴄᴛ', url='https://t.me/Wannabeyoursbackup'),
+            InlineKeyboardButton('ʙᴀᴄᴋ ཀ𓆪', callback_data='start')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -341,13 +341,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@Tech_VJ')
+            InlineKeyboardButton('𓆩ཫ  ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ  ཀ𓆪', url='https://t.me/DevThanos')
         ],[
-            InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/vj_bot_disscussion'),
-            InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/vj_botz')
+            InlineKeyboardButton('𓆩 ᴅᴍᴄᴀ', callback_data='help'),
+            InlineKeyboardButton('ᴀʙᴏᴜᴛ 𓆪', callback_data='about')
         ],[
-            InlineKeyboardButton('💁‍♀️ ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('😊 ᴀʙᴏᴜᴛ', callback_data='about')
+            InlineKeyboardButton('𓆩ཫ ʙᴀᴄᴋᴜᴘ', url='https://t.me/+HV95djLnCocxMWYx'),
+            InlineKeyboardButton('ᴄᴏɴᴛᴀᴄᴛ ཀ𓆪', url='https://t.me/Wannabeyoursbackup')
         ]]
         if CLONE_MODE == True:
             buttons.append([InlineKeyboardButton('🤖 ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', callback_data='clone')])
@@ -391,8 +391,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('Hᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('🔒 Cʟᴏsᴇ', callback_data='close_data')
+            InlineKeyboardButton('𓆩ཫ ᴄᴏɴᴛᴀᴄᴛ', url='https://t.me/Wannabeyoursbackup'),
+            InlineKeyboardButton('ʙᴀᴄᴋ ཀ𓆪', callback_data='start')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
